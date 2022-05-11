@@ -2,10 +2,7 @@
 
 import { orderBy } from "lodash";
 
-const results = document.querySelector(".results-list");
-
 import ApolloClient, { gql } from "apollo-boost";
-
 
 async function makeGQLCall() {
   const gqlUrl = "https://graphqlzero.almansi.me/api";
@@ -31,9 +28,11 @@ const posts  = json.data.posts.data;
   
 const orderedPosts = orderBy(posts, ["id"], ["desc"]);
 
+const results = document.querySelector(".results-list");
+
 for (let i = 0; i < orderedPosts.length; i++) {
 
-    if (i === 4) {
+    if (i === 10) {
         break;
     }
 
